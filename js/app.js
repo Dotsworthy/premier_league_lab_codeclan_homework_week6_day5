@@ -1,47 +1,61 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const submit = document.querySelector('#form');
-  form.addEventListener('submit', handleForm)
+  form.addEventListener('submit', handleTable);
+
+  const deleteAll = document.querySelector('#reset');
+  deleteAll.addEventListener('click', handleButtonClick);
+
+  const sortTable = document.querySelector('#table-head')
+  sortTable.addEventListener('click', handleColumnClick);
 
 });
 
-const handleForm = function() {
-  event.preventDefault();
-  const resultSubmit = document.querySelector('#team-list');
-  const newListItem1 = document.createElement('li')
-  newListItem1.textContent = `Name: ${event.target.teamName.value}`
-
-  const newListItem2 = document.createElement('li')
-  newListItem2.textContent = `Goal Difference: ${event.target.goalDifference.value}`
-
-  const newListItem3 = document.createElement('li')
-  newListItem3.textContent = `Points: ${event.target.points.value}`
-
-  const list = document.querySelector('ul');
-  list.appendChild(newListItem1);
-  list.appendChild(newListItem2);
-  list.appendChild(newListItem3);
-
-  handleTable(event)
-
-  event.target.reset();
+const Row = function(teamName, goalDifference, points) {
+  this.teamName = teamName;
+  this.goalDifference = goalDifference;
+  this.points = points;
 };
 
-const handleTable = function(evt) {
-  const resultSubmit = document.querySelector('#team-table');
-  const newRowItem1 = document.createElement('td')
-  newRowItem1.textContent = `${evt.target.teamName.value}`
+let sortDirection = false;
+let teamData = [];
 
-  const newRowItem2 = document.createElement('td')
-  newRowItem2.textContent = `${evt.target.goalDifference.value}`
+window.onload = () => {
+  loadTableData(teamData);
+};
 
-  const newRowItem3 = document.createElement('td')
-  newRowItem3.textContent = `${evt.target.points.value}`
+const loadTableData = function(teamData) {
+  const tableBody = document.getElementById('tableData');
+  let dataHtml = '';
 
-  const newRow = document.createElement('tr')
-  newRow.appendChild(newRowItem1);
-  newRow.appendChild(newRowItem2);
-  newRow.appendChild(newRowItem3);
+  for (let team of teamData) {
+    dataHtml += `<tr><td>${team.teamName}</td><td>${team.goalDifference}</td><td>${team.points}</td></tr>`;
+  };
 
-  resultSubmit.appendChild(newRow);
+  tableBody.innerHTML = dataHtml;
+};
 
-}
+const handleTable = function() {
+  event.preventDefault();
+
+  const newRowItem1 = event.target.teamName.value
+  const newRowItem2 = event.target.goalDifference.value
+  const newRowItem3 = event.target.points.value
+
+
+  const newRow = new Row(newRowItem1,newRowItem2,newRowItem3);
+  teamData.push(newRow);
+  loadTableData(teamData);
+  event.target.reset();
+
+};
+
+const handleButtonClick = function() {
+  const resultSubmit = document.querySelector('#team-list');
+  document.querySelector('#table-body').innerHTML = '';
+};
+
+const handleColumnClick = function() {
+
+};

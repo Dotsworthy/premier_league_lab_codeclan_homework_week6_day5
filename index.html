@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Premier League Teams</title>
     <script src="js/app.js"> </script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <h1>Premier League Teams</h1>
@@ -25,17 +25,22 @@
 
       <h1>List of Teams</h1>
         <ul id="team-list"></ul>
+        <input id="reset" type="reset" value="Delete All"/>
 
 
-    <table id="team-table">
-      <tr>
-        <th>Team Name</th>
-        <th>Goal Difference</th>
-        <th>Points</th>
-      </tr>
+    <table class="sortable" id="team-table">
+      <thead id="table-head">
+        <tr>
+          <th>Team Name</th>
+          <th>Goal Difference</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody id="tableData">
 
-
+      </tbody>
 
     </table>
+
   </body>
 </html>
