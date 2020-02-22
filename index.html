@@ -5,11 +5,16 @@
     <title>Premier League Teams</title>
     <script src="js/app.js"> </script>
     <link rel="stylesheet" href="css/style.css">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  </head">
   <body>
-    <h1>Premier League Teams</h1>
+    <div class="title-container">
+    <img class="title" src="https://www.seekpng.com/png/full/328-3283001_5-days-until-new-premier-league-season-kicks.png" alt="Logo">
+    <h1 class="title-bar">Team List Web App</h1>
+    </div>
+    <div class="add-team-container">
     <h2>Add Team</h2>
-      <form id="form" class="" action="index.html" method="post">
+      <form id="form" class="add-team-form" action="index.html" method="post">
 
         <label for="team-name">Team Name</label>
         <input type="text" id="teamName">
@@ -20,12 +25,13 @@
         <label for="points">Points</label>
         <input type="text" id="points">
 
-        <button type="submit" id="submit_team">Submit Team</button>
+        <button class="button" type="submit" id="submit_team">Submit Team</button>
       </form>
-
+    </div>
+    <div class="table-container">
       <h1>List of Teams</h1>
         <ul id="team-list"></ul>
-        <input id="reset" type="reset" value="Delete All"/>
+        <input class="button" id="reset" type="reset" value="Delete All"/>
 
 
     <table id="team-table">
@@ -41,6 +47,6 @@
       </tbody>
 
     </table>
-
+    </div>
   </body>
 </html>

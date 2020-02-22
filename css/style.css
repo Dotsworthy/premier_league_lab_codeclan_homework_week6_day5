@@ -1,17 +1,33 @@
 /* Sortable tables */
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+body {
+  font-family: 'poppins';
+  font-weight: bold;
+  background-color: #F2AF29
 }
 
-td, th {
-  border: 1px solid #cccccc;
-  padding: 8px;
+table {
+    font-family: 'Poppins';
+    border-collapse: collapse;
+    width: 50%;
 }
 
 th {
-  font-weight: bold;
+  background-color: #3D195B;
+  color: white;
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+}
+
+tr {
+  background-color: white;
+  padding: 8px;
+
+}
+
+th {
   text-transform: uppercase;
 }
 
@@ -19,7 +35,72 @@ tr:nth-child(even){
   background-color: #dddddd;
 }
 
-tr:hover{
-  background-color: black;
+/* tr:nth-child(even){
+  background-color: #dddddd;
+} */
+
+.title-container {
+  background-color: #3D195B;
   color: white;
+  padding: 5px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  position: absolute;
+  display: inline-flex;
+}
+
+h1 {
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.add-team-container {
+  /* position: fixed; */
+  padding-top: 100px;
+}
+
+.table-container {
+  /* position: fixed; */
+}
+
+img.title {
+  height: 100px;
+  width: auto;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+label {
+  padding: 15px 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input {
+  padding: 15px 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.add-team-form {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+table {
+  padding-top: 15px;
 }
