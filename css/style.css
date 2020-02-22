@@ -1,5 +1,6 @@
 /* Sortable tables */
 table {
+    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
@@ -12,4 +13,13 @@ td, th {
 th {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+tr:nth-child(even){
+  background-color: #dddddd;
+}
+
+tr:hover{
+  background-color: black;
+  color: white;
 }

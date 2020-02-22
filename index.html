@@ -28,12 +28,12 @@
         <input id="reset" type="reset" value="Delete All"/>
 
 
-    <table class="sortable" id="team-table">
+    <table id="team-table">
       <thead id="table-head">
         <tr>
-          <th>Team Name</th>
-          <th>Goal Difference</th>
-          <th>Points</th>
+          <th onclick="sortColumnByName('teamName')">Team Name</th>
+          <th onclick="sortColumnByNumber('goalDifference')">Goal Difference</th>
+          <th onclick="sortColumnByNumber('points')">Points</th>
         </tr>
       </thead>
       <tbody id="tableData">

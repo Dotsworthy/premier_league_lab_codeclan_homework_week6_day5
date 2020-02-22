@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const submit = document.querySelector('#form');
   form.addEventListener('submit', handleTable);
@@ -7,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const deleteAll = document.querySelector('#reset');
   deleteAll.addEventListener('click', handleButtonClick);
 
-  const sortTable = document.querySelector('#table-head')
-  sortTable.addEventListener('click', handleColumnClick);
+  // const sortTable = document.querySelector('#table-head')
+  // sortTable.addEventListener('click', sortColumn);
 
 });
 
@@ -18,8 +17,9 @@ const Row = function(teamName, goalDifference, points) {
   this.points = points;
 };
 
-let sortDirection = false;
+
 let teamData = [];
+let sortDirection = false;
 
 window.onload = () => {
   loadTableData(teamData);
@@ -56,6 +56,28 @@ const handleButtonClick = function() {
   document.querySelector('#table-body').innerHTML = '';
 };
 
-const handleColumnClick = function() {
+const sortColumnByNumber = function(columnName) {
+  const dataType = teamData[0][columnName];
+  sortDirection = !sortDirection;
+  sortColumnNumber(sortDirection, columnName);
 
+  // switch(dataType) {
+  //   case 'number':
+  //   sortColumnNumber(sortDirection, columnName);
+  //   break;
+  //
+  //   case 'string':
+  //   sortColumnNumber(sortDirection, columnName);
+  // };
+
+  loadTableData(teamData);
+};
+  // console.log(teamData);
+
+const sortColumnNumber = function(sort, columnName) {
+  tableData = teamData.sort((team1, team2) => {
+      return sort ? team1[columnName] - team2[columnName] : team2[columnName] - team1[columnName]
+    }
+  )
+  console.log(teamData);
 };
